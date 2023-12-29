@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-29T19:33:45.265Z",
+    "end": "2023-12-29T19:33:54.888Z",
+    "duration": 9623,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "929f3954-0d38-4f5e-8504-1a53a9d79897",
+      "title": "",
+      "fullFile": "cypress/e2e/planets.cy.js",
+      "file": "cypress/e2e/planets.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "110e9711-805a-48a2-9310-ce8a2f83f126",
+          "title": "Testes no módulo de Planets da API Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar uma estrutura JSON válida",
+              "fullTitle": "Testes no módulo de Planets da API Star Wars Deve retornar uma estrutura JSON válida",
+              "timedOut": null,
+              "duration": 6581,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'planets/?format=json'\n}).then(response => {\n  return _planets.default.validateAsync(response.body);\n});",
+              "err": {},
+              "uuid": "1ee6efce-5174-41d8-82c6-25b7b434ac21",
+              "parentUUID": "110e9711-805a-48a2-9310-ce8a2f83f126",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve confirmar o total de população do planeta e o tipo de dado retornado",
+              "fullTitle": "Testes no módulo de Planets da API Star Wars Deve confirmar o total de população do planeta e o tipo de dado retornado",
+              "timedOut": null,
+              "duration": 3000,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'planets'\n}).then(response => {\n  expect(planetsResposta.results[2].population).to.eq('1000').and.to.be.a('string');\n});",
+              "err": {},
+              "uuid": "293738ab-e5bf-4a2f-a3d4-da8ed06052c2",
+              "parentUUID": "110e9711-805a-48a2-9310-ce8a2f83f126",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1ee6efce-5174-41d8-82c6-25b7b434ac21",
+            "293738ab-e5bf-4a2f-a3d4-da8ed06052c2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9581,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

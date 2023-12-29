@@ -1,0 +1,412 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 11,
+    "passes": 11,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 11,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-12-29T19:33:19.949Z",
+    "end": "2023-12-29T19:34:02.207Z",
+    "duration": 42258
+  },
+  "results": [
+    {
+      "uuid": "2d9be100-1b13-4727-b472-9f63f6b3e43b",
+      "title": "",
+      "fullFile": "cypress/e2e/films.cy.js",
+      "file": "cypress/e2e/films.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11572b48-509a-4031-8561-df0890f70e25",
+          "title": "Testes no módulo de Films da API Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar uma estrutura JSON válida",
+              "fullTitle": "Testes no módulo de Films da API Star Wars Deve retornar uma estrutura JSON válida",
+              "timedOut": null,
+              "duration": 15412,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('films/?format=json').then(response => {\n  return _films.default.validateAsync(response.body);\n});",
+              "err": {},
+              "uuid": "0833007f-e880-446a-8002-9d1c81e7e3ba",
+              "parentUUID": "11572b48-509a-4031-8561-df0890f70e25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar se o filme 10 é válido e qual o tipo de retorno ao consultar",
+              "fullTitle": "Testes no módulo de Films da API Star Wars Deve validar se o filme 10 é válido e qual o tipo de retorno ao consultar",
+              "timedOut": null,
+              "duration": 2643,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.buscarFilme(9).then(response => {\n  cy.log(`Request para o filme 10: ${JSON.stringify(response)}`);\n  if (response.body.detail) {\n    cy.log(`Mensagem de erro: ${response.body.detail}`);\n    expect(response.body.detail).to.include('Not found');\n  } else {\n    cy.log(`Título do filme 9: ${response.body.title}`);\n    expect(response.body.title).to.not.be.empty;\n  }\n});",
+              "err": {},
+              "uuid": "7f2b9305-127f-43b7-b412-54e3c9df236a",
+              "parentUUID": "11572b48-509a-4031-8561-df0890f70e25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o nome correto de um determinado episódio de filme",
+              "fullTitle": "Testes no módulo de Films da API Star Wars Deve validar o nome correto de um determinado episódio de filme",
+              "timedOut": null,
+              "duration": 15,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(filmsResposta.results[1].title).to.eq('The Empire Strikes Back');",
+              "err": {},
+              "uuid": "6be7db99-176d-4e4b-948b-594ef7b85e6e",
+              "parentUUID": "11572b48-509a-4031-8561-df0890f70e25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o ID do episódio e se o tipo do dado está correto",
+              "fullTitle": "Testes no módulo de Films da API Star Wars Deve validar o ID do episódio e se o tipo do dado está correto",
+              "timedOut": null,
+              "duration": 9,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(filmsResposta.results[1].episode_id).to.eq(5);\nexpect(filmsResposta.results[1].episode_id).to.be.a('number');",
+              "err": {},
+              "uuid": "c53aa17c-8e80-4ed5-8147-aeae39d2e35b",
+              "parentUUID": "11572b48-509a-4031-8561-df0890f70e25",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0833007f-e880-446a-8002-9d1c81e7e3ba",
+            "7f2b9305-127f-43b7-b412-54e3c9df236a",
+            "6be7db99-176d-4e4b-948b-594ef7b85e6e",
+            "c53aa17c-8e80-4ed5-8147-aeae39d2e35b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18079,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "211d050d-39df-46a7-b1ab-103beef59d55",
+      "title": "",
+      "fullFile": "cypress/e2e/people.cy.js",
+      "file": "cypress/e2e/people.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f13b0fad-c15e-4b3e-8c57-d0d093fe25cd",
+          "title": "Testes no módulo de People da API Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar peso e altura válidos para C-3PO",
+              "fullTitle": "Testes no módulo de People da API Star Wars Deve retornar peso e altura válidos para C-3PO",
+              "timedOut": null,
+              "duration": 4028,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(c3po.height).to.be.a('string').and.not.be.empty;\ncy.log(`Altura: ${c3po.height}`);\nexpect(c3po.mass).to.be.a('string').and.not.be.empty;\ncy.log(`Peso: ${c3po.mass}`);",
+              "err": {},
+              "uuid": "b4846238-5319-475a-9fdb-071ce60ef2b3",
+              "parentUUID": "f13b0fad-c15e-4b3e-8c57-d0d093fe25cd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar a participação de C-3PO em pelo menos um filme",
+              "fullTitle": "Testes no módulo de People da API Star Wars Deve validar a participação de C-3PO em pelo menos um filme",
+              "timedOut": null,
+              "duration": 15,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(c3po.films).to.be.an('array').and.not.be.empty;\ncy.log(`Participação nos filmes: ${c3po.films}`);",
+              "err": {},
+              "uuid": "79c2c319-27d6-407f-95cd-03755db3058d",
+              "parentUUID": "f13b0fad-c15e-4b3e-8c57-d0d093fe25cd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b4846238-5319-475a-9fdb-071ce60ef2b3",
+            "79c2c319-27d6-407f-95cd-03755db3058d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4043,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "929f3954-0d38-4f5e-8504-1a53a9d79897",
+      "title": "",
+      "fullFile": "cypress/e2e/planets.cy.js",
+      "file": "cypress/e2e/planets.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "110e9711-805a-48a2-9310-ce8a2f83f126",
+          "title": "Testes no módulo de Planets da API Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar uma estrutura JSON válida",
+              "fullTitle": "Testes no módulo de Planets da API Star Wars Deve retornar uma estrutura JSON válida",
+              "timedOut": null,
+              "duration": 6581,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'planets/?format=json'\n}).then(response => {\n  return _planets.default.validateAsync(response.body);\n});",
+              "err": {},
+              "uuid": "1ee6efce-5174-41d8-82c6-25b7b434ac21",
+              "parentUUID": "110e9711-805a-48a2-9310-ce8a2f83f126",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve confirmar o total de população do planeta e o tipo de dado retornado",
+              "fullTitle": "Testes no módulo de Planets da API Star Wars Deve confirmar o total de população do planeta e o tipo de dado retornado",
+              "timedOut": null,
+              "duration": 3000,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'planets'\n}).then(response => {\n  expect(planetsResposta.results[2].population).to.eq('1000').and.to.be.a('string');\n});",
+              "err": {},
+              "uuid": "293738ab-e5bf-4a2f-a3d4-da8ed06052c2",
+              "parentUUID": "110e9711-805a-48a2-9310-ce8a2f83f126",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1ee6efce-5174-41d8-82c6-25b7b434ac21",
+            "293738ab-e5bf-4a2f-a3d4-da8ed06052c2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9581,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "88bae9a3-226a-4c1b-a2ee-275efdb11752",
+      "title": "",
+      "fullFile": "cypress/e2e/structure.cy.js",
+      "file": "cypress/e2e/structure.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+          "title": "Testes na estrutura da API de Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar status code 404 para uma URL inválida",
+              "fullTitle": "Testes na estrutura da API de Star Wars Deve retornar status code 404 para uma URL inválida",
+              "timedOut": null,
+              "duration": 627,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: 'people/?format=tray',\n  failOnStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(404);\n});",
+              "err": {},
+              "uuid": "68184527-4f38-4cf9-8865-6dbf33f42f46",
+              "parentUUID": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve retornar uma data válida no formato americano e não no formato brasileiro",
+              "fullTitle": "Testes na estrutura da API de Star Wars Deve retornar uma data válida no formato americano e não no formato brasileiro",
+              "timedOut": null,
+              "duration": 1339,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.buscarFilme(1).then(response => {\n  expect(response.body.release_date).to.match(/^\\d{4}-\\d{2}-\\d{2}$/).and.not.to.match(/^\\d{2}-\\d{2}-\\d{4}$/);\n});",
+              "err": {},
+              "uuid": "698d2cc2-a4b7-4b74-8dee-82cfc045b599",
+              "parentUUID": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o tempo de resposta da requisição",
+              "fullTitle": "Testes na estrutura da API de Star Wars Deve validar o tempo de resposta da requisição",
+              "timedOut": null,
+              "duration": 4001,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let maxTempoResposta = 10000;\ncy.request({\n  method: 'GET',\n  url: 'people'\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.duration).to.be.lessThan(maxTempoResposta);\n});",
+              "err": {},
+              "uuid": "0e4910d0-c15f-47a1-9cc9-545b841cf602",
+              "parentUUID": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68184527-4f38-4cf9-8865-6dbf33f42f46",
+            "698d2cc2-a4b7-4b74-8dee-82cfc045b599",
+            "0e4910d0-c15f-47a1-9cc9-545b841cf602"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5967,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

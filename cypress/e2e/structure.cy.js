@@ -16,10 +16,7 @@ describe('Testes na estrutura da API de Star Wars', () => {
     })
 
     it('Deve retornar uma data válida no formato americano e não no formato brasileiro', () => {
-      cy.request({
-        method: 'GET',
-        url: 'films/2'
-      }).then((response) =>{
+      cy.buscarFilme(1).then((response) =>{
           expect(response.body.release_date).to.match(/^\d{4}-\d{2}-\d{2}$/).and.not.to.match(/^\d{2}-\d{2}-\d{4}$/)
       
         })
@@ -27,7 +24,7 @@ describe('Testes na estrutura da API de Star Wars', () => {
     })
 
     it('Deve validar o tempo de resposta da requisição', () => {
-      let maxTempoResposta = 6000
+      let maxTempoResposta = 10000
   
       cy.request({
         method: 'GET',

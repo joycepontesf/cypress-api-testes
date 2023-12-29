@@ -10,11 +10,15 @@ describe('Testes no módulo de Planets da API Star Wars', () => {
         cy.request({
           method: 'GET',
           url: 'planets',
-        }).then((response) => {
-          planetsResposta = response.body
-        })
-      
-    })
+        }).then(
+          (response) => {
+            planetsResposta = response.body;
+          },
+          {
+            timeout: 10000,
+          }
+        )
+      })
 
     // Foi instalada a Biblioteca Joi para validação da estrutura JSON da URL https://swapi.dev/api/planets/?format=json. Os itens de validação estão disponíveis em pasta /contract/planets.contract, conforme linha 3 de importação. //
 

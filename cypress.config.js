@@ -7,7 +7,14 @@ module.exports = defineConfig({
     },
 
     baseUrl: 'https://swapi.dev/api/',
-    projectId: "6g72q6",
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "mochawesome-report",
+      overwrite: false,
+      html: false,
+      json: true
+
+    }
   
   },
 });

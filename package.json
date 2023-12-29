@@ -7,12 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "npx cypress run --browser chrome",
     "cy:open": "npx cypress open",
-    "cy:headless": "cypress run --headless",
-    "cy:films": "cypress run --headless --spec cypress/e2e/films.cy.js",
-    "cy:people": "cypress run --headless --spec cypress/e2e/people.cy.js",
-    "cy:planets": "cypress run --headless --spec cypress/e2e/planets.cy.js",
-    "cy:structure": "cypress run --headless --spec cypress/e2e/structure.cy.js",
-    "cy:report": "npx cypress run --headless --record --key 057f6def-68d6-45cd-ae0d-5580059190c3"
+    "cy:films": "npx cypress run --browser chrome --spec cypress/e2e/films.cy.js",
+    "cy:people": "npx cypress run --browser chrome --spec cypress/e2e/people.cy.js",
+    "cy:planets": "npx cypress run --browser chrome --spec cypress/e2e/planets.cy.js",
+    "cy:structure": "npx cypress run --browser chrome --spec cypress/e2e/structure.cy.js",
+    "clean:report": "rm -rf mochawesome-report/*",
+    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,10 @@
     "cypress": "^13.6.2"
   },
   "dependencies": {
+    "cypress-multi-reporters": "^1.6.4",
     "joi": "^17.11.0",
-    "swapi-node": "^0.0.1"
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

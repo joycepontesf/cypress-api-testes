@@ -1,6 +1,6 @@
 ## Avaliação prática para Vaga de Analista de Testes QA na Tray
 
-Este repositório contém um conjunto de testes automatizados desenvolvidos para a API do Star Wars (https://swapi.dev) com o uso de Cypress para framework. 
+Este repositório contém um conjunto de testes automatizados desenvolvidos para a [API do Star Wars](https://swapi.dev) com o uso de Cypress para framework. 
 
 Para construção dos cenários descritos abaixo me baseei na heurística de teste VADER que, desenvolvida por Stuart Ashman, considera 5 princípios base:
 
@@ -19,6 +19,7 @@ Para atendimento ao exercício proposto, o foco esteve nos princípios de Dados,
 - Biblioteca Joi
 - Node.js
 - VSCode
+- Mochawesome
 
 ### Cenários de Teste
 
@@ -66,6 +67,8 @@ Todas as dependências usadas neste projeto podem ser consultadas em node_module
 Foram desenvolvidos scripts para otimizar a execução do projeto no formato headless. Você pode encontrá-los no arquivo package.json do projeto.
 
 Os arquivos foram nomeados de acordo com os módulos disponíveis na API (Films, People e Planets) com adição livre do arquivo Structure. Os testes foram agrupados de acordo com a funcionalidade. Já no arquivo Structure foram alocados testes relacionados a estrutura dos dados.
+
+Ainda é possível acessar a pasta mochawesome-report para consultar o relatório dos testes executados.
 
 ### Dúvidas sobre o projeto? 
 Estou disponível via [Linkedin](https://www.linkedin.com/in/joycepontes/).

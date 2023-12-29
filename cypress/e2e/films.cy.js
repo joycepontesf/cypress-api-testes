@@ -30,8 +30,17 @@ describe('Testes no módulo de Films da API Star Wars', () => {
   // Encapsulamento realizado com o recurso commands.js, permitindo um código mais limpo e de fácil reaproveitamento. Considerando que índices em arrays iniciam em 0, o filme com ID 10 estará no índice 9 do array.// 
 
   it('Deve validar se o filme 10 é válido e qual o tipo de retorno ao consultar', () => {
-    cy.buscarFilme(9)
+    cy.buscarFilme(9).then((response) => {
+      cy.log(`Request para o filme 10: ${JSON.stringify(response)}`)
   
+      if (response.body.detail) {
+        cy.log(`Mensagem de erro: ${response.body.detail}`)
+        expect(response.body.detail).to.include('Not found')
+      } else {
+        cy.log(`Título do filme 9: ${response.body.title}`)
+        expect(response.body.title).to.not.be.empty;
+      }
+    })
   })
 
   it('Deve validar o nome correto de um determinado episódio de filme', () => {

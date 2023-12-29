@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-29T19:33:39.553Z",
+    "end": "2023-12-29T19:33:43.644Z",
+    "duration": 4091,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "211d050d-39df-46a7-b1ab-103beef59d55",
+      "title": "",
+      "fullFile": "cypress/e2e/people.cy.js",
+      "file": "cypress/e2e/people.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f13b0fad-c15e-4b3e-8c57-d0d093fe25cd",
+          "title": "Testes no módulo de People da API Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar peso e altura válidos para C-3PO",
+              "fullTitle": "Testes no módulo de People da API Star Wars Deve retornar peso e altura válidos para C-3PO",
+              "timedOut": null,
+              "duration": 4028,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(c3po.height).to.be.a('string').and.not.be.empty;\ncy.log(`Altura: ${c3po.height}`);\nexpect(c3po.mass).to.be.a('string').and.not.be.empty;\ncy.log(`Peso: ${c3po.mass}`);",
+              "err": {},
+              "uuid": "b4846238-5319-475a-9fdb-071ce60ef2b3",
+              "parentUUID": "f13b0fad-c15e-4b3e-8c57-d0d093fe25cd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar a participação de C-3PO em pelo menos um filme",
+              "fullTitle": "Testes no módulo de People da API Star Wars Deve validar a participação de C-3PO em pelo menos um filme",
+              "timedOut": null,
+              "duration": 15,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(c3po.films).to.be.an('array').and.not.be.empty;\ncy.log(`Participação nos filmes: ${c3po.films}`);",
+              "err": {},
+              "uuid": "79c2c319-27d6-407f-95cd-03755db3058d",
+              "parentUUID": "f13b0fad-c15e-4b3e-8c57-d0d093fe25cd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b4846238-5319-475a-9fdb-071ce60ef2b3",
+            "79c2c319-27d6-407f-95cd-03755db3058d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4043,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

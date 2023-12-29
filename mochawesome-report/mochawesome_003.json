@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-29T19:33:56.184Z",
+    "end": "2023-12-29T19:34:02.207Z",
+    "duration": 6023,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88bae9a3-226a-4c1b-a2ee-275efdb11752",
+      "title": "",
+      "fullFile": "cypress/e2e/structure.cy.js",
+      "file": "cypress/e2e/structure.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+          "title": "Testes na estrutura da API de Star Wars",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar status code 404 para uma URL inválida",
+              "fullTitle": "Testes na estrutura da API de Star Wars Deve retornar status code 404 para uma URL inválida",
+              "timedOut": null,
+              "duration": 627,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: 'people/?format=tray',\n  failOnStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(404);\n});",
+              "err": {},
+              "uuid": "68184527-4f38-4cf9-8865-6dbf33f42f46",
+              "parentUUID": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve retornar uma data válida no formato americano e não no formato brasileiro",
+              "fullTitle": "Testes na estrutura da API de Star Wars Deve retornar uma data válida no formato americano e não no formato brasileiro",
+              "timedOut": null,
+              "duration": 1339,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.buscarFilme(1).then(response => {\n  expect(response.body.release_date).to.match(/^\\d{4}-\\d{2}-\\d{2}$/).and.not.to.match(/^\\d{2}-\\d{2}-\\d{4}$/);\n});",
+              "err": {},
+              "uuid": "698d2cc2-a4b7-4b74-8dee-82cfc045b599",
+              "parentUUID": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o tempo de resposta da requisição",
+              "fullTitle": "Testes na estrutura da API de Star Wars Deve validar o tempo de resposta da requisição",
+              "timedOut": null,
+              "duration": 4001,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let maxTempoResposta = 10000;\ncy.request({\n  method: 'GET',\n  url: 'people'\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.duration).to.be.lessThan(maxTempoResposta);\n});",
+              "err": {},
+              "uuid": "0e4910d0-c15f-47a1-9cc9-545b841cf602",
+              "parentUUID": "bbb51a9c-4dea-4b1a-a0c4-3c705f10383d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68184527-4f38-4cf9-8865-6dbf33f42f46",
+            "698d2cc2-a4b7-4b74-8dee-82cfc045b599",
+            "0e4910d0-c15f-47a1-9cc9-545b841cf602"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5967,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
