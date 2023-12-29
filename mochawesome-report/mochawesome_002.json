@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2023-12-29T19:33:45.265Z",
-    "end": "2023-12-29T19:33:54.888Z",
-    "duration": 9623,
+    "start": "2023-12-29T20:14:15.352Z",
+    "end": "2023-12-29T20:14:22.877Z",
+    "duration": 7525,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "929f3954-0d38-4f5e-8504-1a53a9d79897",
+      "uuid": "c377cfa7-e614-4ecb-9d6d-ce42d0f6339c",
       "title": "",
       "fullFile": "cypress/e2e/planets.cy.js",
       "file": "cypress/e2e/planets.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "110e9711-805a-48a2-9310-ce8a2f83f126",
+          "uuid": "41d8b797-e4c3-41fc-bcbc-9ecaa7a0f751",
           "title": "Testes no módulo de Planets da API Star Wars",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve retornar uma estrutura JSON válida",
               "fullTitle": "Testes no módulo de Planets da API Star Wars Deve retornar uma estrutura JSON válida",
               "timedOut": null,
-              "duration": 6581,
+              "duration": 5126,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.request({\n  method: 'GET',\n  url: 'planets/?format=json'\n}).then(response => {\n  return _planets.default.validateAsync(response.body);\n});",
               "err": {},
-              "uuid": "1ee6efce-5174-41d8-82c6-25b7b434ac21",
-              "parentUUID": "110e9711-805a-48a2-9310-ce8a2f83f126",
+              "uuid": "902c7113-1c53-4d94-afb6-c79644ca2311",
+              "parentUUID": "41d8b797-e4c3-41fc-bcbc-9ecaa7a0f751",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Deve confirmar o total de população do planeta e o tipo de dado retornado",
               "fullTitle": "Testes no módulo de Planets da API Star Wars Deve confirmar o total de população do planeta e o tipo de dado retornado",
               "timedOut": null,
-              "duration": 3000,
+              "duration": 2355,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.request({\n  method: 'GET',\n  url: 'planets'\n}).then(response => {\n  expect(planetsResposta.results[2].population).to.eq('1000').and.to.be.a('string');\n});",
               "err": {},
-              "uuid": "293738ab-e5bf-4a2f-a3d4-da8ed06052c2",
-              "parentUUID": "110e9711-805a-48a2-9310-ce8a2f83f126",
+              "uuid": "cbe90287-a227-4354-9678-1149e4b8da4e",
+              "parentUUID": "41d8b797-e4c3-41fc-bcbc-9ecaa7a0f751",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1ee6efce-5174-41d8-82c6-25b7b434ac21",
-            "293738ab-e5bf-4a2f-a3d4-da8ed06052c2"
+            "902c7113-1c53-4d94-afb6-c79644ca2311",
+            "cbe90287-a227-4354-9678-1149e4b8da4e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9581,
+          "duration": 7481,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

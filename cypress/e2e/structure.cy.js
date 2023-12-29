@@ -2,11 +2,11 @@
 
 describe('Testes na estrutura da API de Star Wars', () => {
 
-  // Uso de failOnStatusCode para impedir que o teste seja interrompido mesmo em uma situação onde o status code não é bem-sucedido, neste caso espera-se que haja a falha e que o retorno seja o status code 404 (Not Found). //
+  // Uso de failOnStatusCode para impedir que o teste seja interrompido mesmo em uma situação onde o status code não é bem-sucedido, neste caso espera-se que haja a falha e que o retorno seja o status code 404 (Not Found). URL sugerida para realização do teste https://swapi.dev/api/people/?format=jsonx. //
 
     it('Deve retornar status code 404 para uma URL inválida', () => {
       cy.request({
-        url: 'people/?format=tray',
+        url: 'people/?format=jsonx',
         failOnStatusCode: false
       }).then((response) =>{
           expect(response.status).to.eq(404)
