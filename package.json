@@ -1,0 +1,27 @@
+{
+  "name": "cypress-api-testes",
+  "version": "1.0.0",
+  "description": "Este repositório contém um conjunto de testes automatizados em JavaScript utilizando a ferramenta Cypress para realizar testes na Swapi.dev. Os testes foram desenvolvidos para demonstrar habilidades adquiridas em testes de API Rest, bem como as boas práticas de automação de testes em APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "npx cypress run --browser chrome",
+    "cy:open": "npx cypress open",
+    "cy:headless": "cypress run --headless",
+    "cy:films": "cypress run --headless --spec cypress/e2e/films.cy.js",
+    "cy:people": "cypress run --headless --spec cypress/e2e/people.cy.js",
+    "cy:planets": "cypress run --headless --spec cypress/e2e/planets.cy.js",
+    "cy:structure": "cypress run --headless --spec cypress/e2e/structure.cy.js",
+    "cy:report": "npx cypress run --headless --record --key 057f6def-68d6-45cd-ae0d-5580059190c3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.2"
+  },
+  "dependencies": {
+    "joi": "^17.11.0",
+    "swapi-node": "^0.0.1"
+  }
+}
