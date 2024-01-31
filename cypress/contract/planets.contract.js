@@ -1,7 +1,6 @@
 const Joi = require('joi')
 
 const planetsSchema = Joi.object({
-
     count: Joi.number().required(),
     next: Joi.string().allow(null),
     previous: Joi.string().allow(null),
@@ -20,9 +19,7 @@ const planetsSchema = Joi.object({
         created: Joi.string().required(),
         edited: Joi.string().required(),
         url: Joi.string().uri().required(),
-    
     })
-
 })
 
 export default Joi.compile(planetsSchema);

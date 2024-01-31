@@ -1,12 +1,11 @@
 const Joi = require('joi')
 
 const filmSchema = Joi.object({
-
   count: Joi.number().required(),
   next: Joi.string().allow(null).optional(),
   previous: Joi.string().allow(null).optional(),
   results: Joi.array().items({
-    
+
     title: Joi.string().required(),
     episode_id: Joi.number().integer().required(),
     opening_crawl: Joi.string().required(),
@@ -21,8 +20,7 @@ const filmSchema = Joi.object({
     created: Joi.string().isoDate().required(),
     edited: Joi.string().isoDate().required(),
     url: Joi.string().uri({ scheme: ['http', 'https'] }).required(),
-  })  
-
+  })
 })
 
 export default Joi.compile(filmSchema);

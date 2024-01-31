@@ -1,32 +1,21 @@
-/// reference types="cypress" />
-
-describe('Testes no módulo de People da API Star Wars', () => {
-
-  // Construção do before() em conjunto com encapsulamento do código em commands.js. //
+describe('People module of The Star Wars API', () => {
 
   let c3po
 
   before(() => {
-    cy.buscarPersonagem('C-3PO').then((personagem) => {
-      c3po = personagem
+    cy.characterSearch('C-3PO').then((character) => {
+      c3po = character
       expect(c3po).to.exist
     })
-
   })
 
-  it('Deve retornar peso e altura válidos para C-3PO', () => {
+  it('Should validate that C-3PO has both weight and height in the Films module', () => {
     expect(c3po.height).to.be.a('string').and.not.be.empty
-    cy.log(`Altura: ${c3po.height}`)
-
-    expect(c3po.mass).to.be.a('string').and.not.be.empty
-    cy.log(`Peso: ${c3po.mass}`)
-  
+    expect(c3po.mass).to.be.a('string').and.not.be.empty  
   })
 
-  it('Deve validar a participação de C-3PO em pelo menos um filme', () => {
+  it('Should validate C-3POs participation in at least one movie in the Films module', () => {
     expect(c3po.films).to.be.an('array').and.not.be.empty
     cy.log(`Participação nos filmes: ${c3po.films}`)
-  
   })
-
 })

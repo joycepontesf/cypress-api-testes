@@ -1,39 +1,29 @@
-/// reference types="cypress" />
+describe('Structure of The Star Wars API', () => {
 
-describe('Testes na estrutura da API de Star Wars', () => {
-
-  // Uso de failOnStatusCode para impedir que o teste seja interrompido mesmo em uma situação onde o status code não é bem-sucedido, neste caso espera-se que haja a falha e que o retorno seja o status code 404 (Not Found). URL sugerida para realização do teste https://swapi.dev/api/people/?format=jsonx. //
-
-    it('Deve retornar status code 404 para uma URL inválida', () => {
-      cy.request({
-        url: 'people/?format=jsonx',
-        failOnStatusCode: false
-      }).then((response) =>{
-          expect(response.status).to.eq(404)
-      
-        })
-      
+  it('Should return a status code 404 for an invalid URL in the Films module', () => {
+    cy.request({
+      url: 'people/?format=jsonx',
+      failOnStatusCode: false
+    }).then((response) => {
+      expect(response.status).to.eq(404)
     })
+  })
 
-    it('Deve retornar uma data válida no formato americano e não no formato brasileiro', () => {
-      cy.buscarFilme(1).then((response) =>{
-          expect(response.body.release_date).to.match(/^\d{4}-\d{2}-\d{2}$/).and.not.to.match(/^\d{2}-\d{2}-\d{4}$/)
-      
-        })
-
+  it('Should return a valid date in the American format, not the Brazilian format', () => {
+    cy.filmSearch(1).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.body.release_date).to.match(/^\d{4}-\d{2}-\d{2}$/).and.not.to.match(/^\d{2}-\d{2}-\d{4}$/)
     })
+  })
 
-    it('Deve validar o tempo de resposta da requisição', () => {
-      let maxTempoResposta = 10000
-  
-      cy.request({
-        method: 'GET',
-        url: 'people'
-      }).then((response) => {
-          expect(response.status).to.equal(200)
-          expect(response.duration).to.be.lessThan(maxTempoResposta)
-        })
-    
+  it('Should validate the response time of the request in the Films module', () => {
+    let maxResponseTime = 10000
+    cy.request({
+      method: 'GET',
+      url: 'people'
+    }).then((response) => {
+      expect(response.status).to.equal(200)
+      expect(response.duration).to.be.lessThan(maxResponseTime)
     })
-
+  })
 })
