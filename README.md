@@ -1,6 +1,6 @@
-## Avaliação prática para Vaga de Analista de Testes QA na Tray
+## Automação API Stars Wars com Cypress!
 
-Este repositório contém um conjunto de testes automatizados desenvolvidos para a [API do Star Wars](https://swapi.dev) com o uso de Cypress para framework. 
+Este repositório contém uma suíte de testes automatizados desenvolvidos para a [API do Star Wars](https://swapi.dev) com o framework Cypress. 
 
 Para construção dos cenários descritos abaixo me baseei na heurística de teste VADER que, desenvolvida por Stuart Ashman, considera 5 princípios base:
 
